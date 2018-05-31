@@ -32,8 +32,8 @@
                                 <!-- form message -->
                                 <div class="row">
                                     <div class="col-12">
-                                        <div class="alert alert-success contact__msg" style="display: none" role="alert">
-                                            Your message was sent successfully.
+                                        <!--<div class="alert alert-success contact__msg" style="display: none" role="alert">-->
+                                        <?php echo $result; ?>
                                         </div>
                                     </div>
                                 </div>
@@ -43,21 +43,27 @@
                                 <div class="row">
                                     <div class="col-md-6 form-group">
                                         <input id="name" name="name" type="text" class="form-control" placeholder="Name" required>
+                                        <?php echo "<p class='text-danger'>$errName</p>";?>
                                     </div>
                                     <div class="col-md-6 form-group">
                                         <input id="email" name="email" type="email" class="form-control" placeholder="Email" required>
+                                        <?php echo "<p class='text-danger'>$errEmail</p>";?>
                                     </div>
                                     <div class="col-md-6 form-group">
                                         <input id="phone" name="phone" type="text" class="form-control" placeholder="Phone" required>
+                                        <?php echo "<p class='text-danger'>$errPhone</p>";?>
                                     </div>
                                     <div class="col-md-6 form-group">
                                         <input id="subject" name="subject" type="text" class="form-control" placeholder="Subject" required>
+                                        <?php echo "<p class='text-danger'>$errSubject</p>";?>
                                     </div>
                                     <div class="col-12 form-group">
                                         <textarea id="text" name="message" class="form-control" rows="3" placeholder="Message" required></textarea>
+                                        <?php echo "<p class='text-danger'>$errSubject</p>";?>
                                     </div>
                                     <div class="col-12">
                                         <input name="submit" type="submit" class="btn btn-success" value="Send Message">
+                                        
                                     </div>
                                 </div>
                                 <!-- end form element -->
