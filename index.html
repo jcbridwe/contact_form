@@ -18,7 +18,6 @@
     </script> -->
 </head>
 <body>
-
     <!-- ajax contact form -->
     <section style="margin-top: 50px;">
         <div class="container">
@@ -27,47 +26,46 @@
                     <div class="card">
                         <h5 class="card-header">Ajax Contact Form</h5>
                         <div class="card-body">
-                            <form class="contact__form" method="post" action="mail.php">
-
-                                <!-- form message -->
-                                <div class="row">
-                                    <div class="col-12">
-                                        <!--<div class="alert alert-success contact__msg" style="display: none" role="alert">-->
-                                        <?php echo $result; ?>
-                                        </div>
-                                    </div>
-                                </div>
-                                <!-- end message -->
-
-                                <!-- form element -->
-                                <div class="row">
-                                    <div class="col-md-6 form-group">
-                                        <input id="name" name="name" type="text" class="form-control" placeholder="Name" required>
-                                        <?php echo "<p class='text-danger'>$errName</p>";?>
-                                    </div>
-                                    <div class="col-md-6 form-group">
-                                        <input id="email" name="email" type="email" class="form-control" placeholder="Email" required>
-                                        <?php echo "<p class='text-danger'>$errEmail</p>";?>
-                                    </div>
-                                    <div class="col-md-6 form-group">
-                                        <input id="phone" name="phone" type="text" class="form-control" placeholder="Phone" required>
-                                        <?php echo "<p class='text-danger'>$errPhone</p>";?>
-                                    </div>
-                                    <div class="col-md-6 form-group">
-                                        <input id="subject" name="subject" type="text" class="form-control" placeholder="Subject" required>
-                                        <?php echo "<p class='text-danger'>$errSubject</p>";?>
-                                    </div>
-                                    <div class="col-12 form-group">
-                                        <textarea id="text" name="message" class="form-control" rows="3" placeholder="Message" required></textarea>
-                                        <?php echo "<p class='text-danger'>$errSubject</p>";?>
-                                    </div>
-                                    <div class="col-12">
-                                        <input name="submit" type="submit" class="btn btn-success" value="Send Message">
-                                        
-                                    </div>
-                                </div>
-                                <!-- end form element -->
-                            </form>
+                            <form class="form-horizontal" role="form" method="post" action="mail.php">
+                            	<div class="form-group">
+                            		<label for="name" class="col-sm-2 control-label">Name</label>
+                            		<div class="col-sm-10">
+                            			<input type="text" class="form-control" id="name" name="name" placeholder="First & Last Name" value="<?php echo htmlspecialchars($_POST['name']); ?>">
+                            			<?php echo "<p class='text-danger'>$errName</p>";?>
+                            		</div>
+                            	</div>
+                            	<div class="form-group">
+                            		<label for="email" class="col-sm-2 control-label">Email</label>
+                            		<div class="col-sm-10">
+                            			<input type="email" class="form-control" id="email" name="email" placeholder="example@domain.com" value="<?php echo htmlspecialchars($_POST['email']); ?>">
+                            			<?php echo "<p class='text-danger'>$errEmail</p>";?>
+                            		</div>
+                            	</div>
+                            	<div class="form-group">
+                            		<label for="message" class="col-sm-2 control-label">Message</label>
+                            		<div class="col-sm-10">
+                            			<textarea class="form-control" rows="4" name="message"><?php echo htmlspecialchars($_POST['message']);?></textarea>
+                            			<?php echo "<p class='text-danger'>$errMessage</p>";?>
+                            		</div>
+                            	</div>
+                            	<div class="form-group">
+                            		<label for="human" class="col-sm-2 control-label">2 + 3 = ?</label>
+                            		<div class="col-sm-10">
+                            			<input type="text" class="form-control" id="human" name="human" placeholder="Your Answer">
+                            			<?php echo "<p class='text-danger'>$errHuman</p>";?>
+                            		</div>
+                            	</div>
+                            	<div class="form-group">
+                            		<div class="col-sm-10 col-sm-offset-2">
+                            			<input id="submit" name="submit" type="submit" value="Send" class="btn btn-primary">
+                            		</div>
+                            	</div>
+                            	<div class="form-group">
+                            		<div class="col-sm-10 col-sm-offset-2">
+                            			<?php echo $result; ?>	
+                            		</div>
+                            	</div>
+                            </form> 
                             <div class="columns download">
                               <p>
                                 <a href="resume.pdf" download><i class="fa fa-download">
